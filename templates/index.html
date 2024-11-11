@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>paRAGraph</title>
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>paRAGraph - Narrative chatbot</h1>
+
+            <div id="chat-area">
+                <div id="messages"></div>
+            </div>
+
+            <form
+                id="query-form"
+                hx-post="/chat"
+                hx-target="#messages"
+                hx-swap="beforeend"
+            >
+                <input
+                    type="text"
+                    id="query"
+                    name="query"
+                    placeholder="Write your query..."
+                    required
+                />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </body>
+</html>
